@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Smart Items
 
-## Getting Started
+Smart Items is a Next.js practice project built with the App Router, MongoDB, and NextAuth.js.
+The project focuses on user authentication, protected routes, and basic product management, with a clean UI and real deployment experience.
 
-First, run the development server:
+---
+
+## 🚀 Live Demo
+
+🔗 **Production URL:**
+https://smart-items.vercel.app/
+
+---
+
+## 🧰 Tech Stack
+
+- **Frontend:** Next.js 16 (App Router), React, Tailwind CSS, DaisyUI
+- **Backend:** Next.js Server Actions, API Routes
+- **Database:** MongoDB Atlas
+- **Authentication:** NextAuth.js (Credentials & Google OAuth)
+- **Deployment:** Vercel
+
+---
+
+## 📦 Setup & Installation
+
+### 1️⃣ Clone the repository
+
+```bash
+git clone <your-repo-url>
+cd smart-items
+```
+
+### 2️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Environment Variables (`.env`)
+
+Create a `.env` file in the root directory:
+
+```env
+MONGODB_URI=your_mongodb_uri
+DB_NAME=smartItemsDB
+
+NEXTAUTH_SECRET=your_secret_key
+NEXTAUTH_URL=http://localhost:3000
+
+GOOGLE_CLIENT_ID=your_google_client_id
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+### 4️⃣ Run the project locally
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App will run at:
+👉 `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🗺️ Route Summary
 
-## Learn More
+| Route               | Type      | Description                      |
+| ------------------- | --------- | -------------------------------- |
+| `/`                 | Public    | Home page                        |
+| `/about`            | Public    | About page                       |
+| `/contact`          | Public    | Contact page                     |
+| `/login`            | Public    | User login                       |
+| `/register`         | Public    | User registration                |
+| `/allProducts`      | Public    | View all products                |
+| `/allProducts/[id]` | Dynamic   | Product details                  |
+| `/addProduct`       | Protected | Add new product (Login required) |
+| `/api/auth/*`       | API       | Authentication routes            |
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔐 Authentication & Authorization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Credentials-based login (email & password)
+- Google OAuth login
+- Unauthorized users are redirected to `/login`
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ✨ Implemented Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- ✅ User authentication (Credentials + Google)
+- ✅ Secure route protection using middleware
+- ✅ Product creation with MongoDB
+- ✅ Product listing & details page
+- ✅ Toast notification on successful product creation
+- ✅ Responsive UI with Tailwind & DaisyUI
+- ✅ Server Actions for database operations
+- ✅ Environment-based configuration
+- ✅ Deployed on Vercel
+
+---
+
+## 🔔 Toast Notification Feature
+
+When a product is successfully added:
+
+- A **toast notification** is displayed to confirm success
+- Improves user experience with instant feedback
+- Prevents confusion after form submission
+
+---
+
+## 📌 Brief Feature Explanation
+
+- **Authentication:** Implemented using NextAuth.js for secure login and session management
+- **Protected Routes:** Middleware ensures only authenticated users can access sensitive pages
+- **Product Management:** Products are stored and fetched from MongoDB using server actions
+- **UI & UX:** Clean, responsive design with feedback notifications
+- **Deployment:** Production-ready build deployed on Vercel
+
+---
+
+## 👨‍💻 Author
+
+**Abdul Majed**
+Aspiring Full Stack Developer
+Focused on building scalable web applications 🚀
+
+---
+
+⭐ If you like this project, feel free to give it a star!
